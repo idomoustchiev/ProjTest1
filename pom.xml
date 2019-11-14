@@ -17,6 +17,13 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
+            <!-- Exclude default SpringBoot logger as it collides with Slf4j -->
+            <exclusions>
+		     <exclusion>
+			     <groupId>org.springframework.boot</groupId>
+			     <artifactId>spring-boot-starter-logging</artifactId>
+		     </exclusion>
+ 			</exclusions>
         </dependency>
         <!-- tag::actuator[] -->
         <dependency>
@@ -39,6 +46,17 @@
             <groupId>org.codehaus.groovy</groupId>
             <artifactId>groovy-all</artifactId>
         </dependency -->
+         <dependency>
+        <groupId>org.slf4j</groupId>
+        <artifactId>slf4j-api</artifactId>
+        <version>1.7.6</version>
+	    </dependency>
+	    <dependency>
+	        <groupId>org.slf4j</groupId>
+	        <artifactId>slf4j-log4j12</artifactId>
+	        <version>1.7.5</version>
+	    </dependency>
+	    
     </dependencies>
 
     <properties>
